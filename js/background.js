@@ -31,7 +31,6 @@ Background.prototype.draw = function() {
      this.game.horse2.x = this.game.horse2.x - 50;
      this.x -= this.dx;
      counter++;
-     console.log(counter);
    }
     if (this.x < -this.game.canvas.width) this.x = 0;
  };

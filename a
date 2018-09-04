@@ -1,0 +1,7 @@
+[33mcommit 4487e9693c81818fe38fcb06b3243c4d9c1ecfaf[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Chris Lopez <pagarizabal2@gmail.com>
+Date:   Mon Sep 3 17:07:10 2018 +0200
+
+    Basic Game implementation.
+    
+    Sprites, bg and basic functionality implemented
