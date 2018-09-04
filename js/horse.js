@@ -1,6 +1,6 @@
 function Horse(game, img, x, y) {
   this.game = game;
- 
+
   this.x = this.game.canvas.width * 0.08;
 
   // guardar posición original (suelo)

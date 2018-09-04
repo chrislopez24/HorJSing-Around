@@ -9,28 +9,19 @@ function Background(game) {
 
   this.dx = 400;
 }
-Background.prototype.draw = function() {
+Background.prototype.draw = function () {
   this.game.ctx.drawImage(this.img, this.x, this.y, this.game.canvas.width, this.game.canvas.height);
-  // this.game.ctx.fillText("HOLA", 400, 100);
-  // this.game.ctx.fillStyle='white';
-  
   this.game.ctx.drawImage(this.img, this.x + this.game.canvas.width, this.y, this.game.canvas.width, this.game.canvas.height);
-  
+
 };
 
- Background.prototype.move = function() {
-   //Background Moving if:
-   //Horse 1 X canvas width
-   // or Horse 2 X = canvas width
-  
-   //this.x -= this.dx;
-   //console.log(this.game.horse1)
-   var horsePos = this.game.canvas.width - 100;
-   if ((this.game.horse1.x > horsePos) || (this.game.horse2.x > horsePos)) {
-     this.game.horse1.x = this.game.horse1.x - 50;
-     this.game.horse2.x = this.game.horse2.x - 50;
-     this.x -= this.dx;
-     counter++;
-   }
-    if (this.x < -this.game.canvas.width) this.x = 0;
- };
+Background.prototype.move = function () {
+  var horsePos = this.game.canvas.width - 100;
+  if ((this.game.horse1.x > horsePos) || (this.game.horse2.x > horsePos)) {
+    this.game.horse1.x = this.game.horse1.x - 50;
+    this.game.horse2.x = this.game.horse2.x - 50;
+    this.x -= this.dx;
+    counter++;
+  }
+  if (this.x < -this.game.canvas.width) this.x = 0;
+};
