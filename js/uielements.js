@@ -10,7 +10,7 @@ function UIElements(game) {
 UIElements.prototype.drawProgressBar = function () {
   diff = (counter / 100) * Math.PI * 2;
   //this.ctx.clearRect(0,0,400,200);
-  console.log(counter);
+  //console.log(counter);
   this.game.ctx.font = "20px Caveat";
   this.game.ctx.fillStyle = 'white';
   this.game.ctx.fillText('GAME PROGRESS', this.x + 100, this.y + 150);
