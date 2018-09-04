@@ -1,9 +1,10 @@
-function Horse(game, img) {
+function Horse(game, img, x, y) {
   this.game = game;
+ 
   this.x = this.game.canvas.width * 0.08;
 
   // guardar posición original (suelo)
-  this.y0 = this.game.canvas.height * 0.8;
+  this.y0 = y;
   this.y = this.y0;
 
   this.img = new Image();

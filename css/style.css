@@ -1,7 +1,56 @@
-.btn-success {
-  width: 100%;
-}
-#bg-image {
+#start-button {
   width: 1200px;
-  height: 700px;
+}
+#credits-button {
+  margin: 3px;
+  width: 1200px;
+}
+#reset-button {
+  margin: 3px;
+  width: 1200px;
+}
+/* #bg-image {
+  width: 1200px;
+  height: 600px;
+} */
+.container {
+  width: 1200px;
+  height: 600px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+#menu {
+  position: absolute;
+  width: 1200px;
+  height: 600px;
+  border: 1px solid black;
+  z-index: 2;
+  text-align: center;
+  background-color: grey;
+}
+#menu {
+  background-image: url('../img/bg.png');
+}
+h1 {
+  font-family: 'Caveat';font-size: 100px;
+  font-stretch: expanded;
+  color: white;
+}
+span {
+  color: yellow;
+}
+#main {
+  height: 60%;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+canvas {
+  position: relative;
+  top: 0;
+  left: 0;
+  border: 1px solid black;
+  z-index: 1;
 }
