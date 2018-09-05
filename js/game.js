@@ -77,9 +77,10 @@ Game.prototype.setListeners = function () {
       this.horse2.animateImg();
       this.horse2.x += 30;
     }
-    if(event.keyCode === PLAYER1_KEY_POWER ) {
-      powerMod = this.framesCounter;
+    if(event.keyCode === PLAYER1_KEY_POWER) {
+      powerMod = Math.floor(this.framesCounter / 4);
       console.log(`A pressed : ${powerMod} value`)
+      this.uielements.resetPowerBar();
     return powerMod;
     }
   }.bind(this)

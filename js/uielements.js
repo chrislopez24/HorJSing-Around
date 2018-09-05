@@ -65,5 +65,7 @@ UIElements.prototype.drawPowerBar1 = function() {
   this.game.ctx.closePath();
 }
 UIElements.prototype.resetPowerBar = function() {
+  this.game.framesCounter = 0;
+  //console.log("entro reset power bar");
   
 }
