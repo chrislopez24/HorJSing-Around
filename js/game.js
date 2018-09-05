@@ -5,15 +5,16 @@ function Game(canvas) {
   this.fps = 60;
   this.winner = "";
   this.reset();
+  //this.framesCounter = 0;
 
 }
 var counter = 0;
 Game.prototype.start = function () {
-  console.log("Start() entro");
   this.interval = setInterval(function () {
     this.clear();
 
     this.framesCounter++;
+    //console.log(Math.floor(this.framesCounter/this.fps));
 
     // controlamos que frameCounter no sea superior a 1000
     if (this.framesCounter > 1000) {
@@ -33,8 +34,6 @@ Game.prototype.checkWinner = function () {
   if (counter > 100) {
     this.stop();
     if (this.horse1.x > this.horse2.x) {
-      //document.getElementById("start-button").innerText = "HORSE 1 WON!";
-      //alert("HORSE 1 WON!!");
       this.winner = "Horse 1";
       this.drawWinnerText();
     } else if (this.horse2.x > this.horse1.x) {
@@ -61,16 +60,27 @@ Game.prototype.drawWinnerText = function () {
 
 var PLAYER1_KEY = 90; // Z
 var PLAYER2_KEY = 77; // M
+var PLAYER1_KEY_POWER = 65; //A
 
 Game.prototype.setListeners = function () {
+  var powerMod;
   document.onkeyup = function (event) {
     if (event.keyCode === PLAYER1_KEY) {
       this.horse1.animateImg();
       this.horse1.x += 30;
+      if (powerMod) {
+        this.horse1.x += powerMod;
+      }
+      console.log(this.horse1.x);
     }
     if (event.keyCode === PLAYER2_KEY) {
       this.horse2.animateImg();
       this.horse2.x += 30;
+    }
+    if(event.keyCode === PLAYER1_KEY_POWER ) {
+      powerMod = this.framesCounter;
+      console.log(`A pressed : ${powerMod} value`)
+    return powerMod;
     }
   }.bind(this)
 }
@@ -83,8 +93,7 @@ Game.prototype.reset = function () {
   this.horse2 = new Horse(this, './img/p2.png', 0, 380);
 
   this.framesCounter = 0;
-  this.counter = 0;
-  //this.uielements.amountProgressLoaded = 0
+  counter = 0;
   this.winner = "";
 };
 
@@ -109,6 +118,7 @@ Game.prototype.credits = function () {
 Game.prototype.draw = function () {
   this.background.draw();
   this.uielements.drawProgressBar();
+  this.uielements.drawPowerBar();
   this.horse1.draw();
   this.horse2.draw(); 
 };
