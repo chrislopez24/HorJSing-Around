@@ -2,7 +2,7 @@ function UIElements(game) {
   this.game = game;
   this.diff; //slow progress bar
   this.start = 4.80;
-  this.amountLoaded = 0;
+  this.amountProgressLoaded = 0;
   this.x = 0;
   this.y = 0;
 
@@ -13,7 +13,7 @@ UIElements.prototype.drawProgressBar = function () {
   //console.log(counter);
   this.game.ctx.font = "20px Caveat";
   this.game.ctx.fillStyle = 'white';
-  this.game.ctx.fillText('GAME PROGRESS', this.x + 100, this.y + 150);
+  this.game.ctx.fillText('GAME PROGRESS', this.x + 600, this.y + 150);
   this.game.ctx.beginPath();
   //this.game.ctx.arc(this.x + 100,this.y + 80,50,0,2*Math.PI,false);
 
@@ -30,11 +30,11 @@ UIElements.prototype.drawProgressBar = function () {
   this.game.ctx.beginPath(); // starting circle drawing function
   //console.log("styling");
   //this.game.ctx.beginPath();
-  this.game.ctx.arc(this.x + 100, this.y + 70, 50, this.start, diff + this.start, false);
+  this.game.ctx.arc(this.x + 600, this.y + 70, 50, this.start, diff + this.start, false);
   this.game.ctx.stroke();
-  this.game.ctx.fillText(`${counter} %`, this.x + 100, this.y + 80);
+  this.game.ctx.fillText(`${counter} %`, this.x + 600, this.y + 80);
   console.log("creado");
-  this.amountLoaded++;
+  this.amountProgressLoaded++;
   if (counter == 101) {
     this.game.stop();
   }
