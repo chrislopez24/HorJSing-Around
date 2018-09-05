@@ -40,24 +40,25 @@ UIElements.prototype.drawProgressBar = function() {
   }
 }
 UIElements.prototype.drawPowerBar = function() {
-  this.drawPowerBar1();
+  this.drawPowerBar();
   //this.drawPowerBar2();
 
   if (this.game.framesCounter >= 192) {
     this.game.framesCounter = 0;
   }
 }
-UIElements.prototype.drawPowerBar1 = function() {
+UIElements.prototype.drawPowerBar = function() {
   var power = this.game.ctx.createLinearGradient(0,0,500,0);
     power.addColorStop(0,"yellow");
     power.addColorStop(1,"red");
   this.game.ctx.beginPath();
   this.game.ctx.rect(188, 50, 200, 50);
   this.game.ctx.lineWidth = 4;
-  this.game.ctx.strokeStyle = 'green';
+  this.game.ctx.strokeStyle = 'lightblue';
   this.game.ctx.stroke()
   this.game.ctx.closePath();
   this.game.ctx.beginPath();
+  this.game.ctx.fillStyle = 'red';
   this.game.ctx.fillText(`POWER`, 220, 40);
   this.game.ctx.fillStyle = power;
   this.game.ctx.rect(190, 52, this.game.framesCounter , 45);
@@ -66,6 +67,4 @@ UIElements.prototype.drawPowerBar1 = function() {
 }
 UIElements.prototype.resetPowerBar = function() {
   this.game.framesCounter = 0;
-  //console.log("entro reset power bar");
-  
 }

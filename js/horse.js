@@ -15,8 +15,8 @@ function Horse(game, img, x, y) {
   this.img.frameIndex = 0;
 
   // medidas de la imagen a representar en el canvas
-  this.w = 70;
-  this.h = 75;
+  this.w = 90;
+  this.h = 95;
   game.setListeners();
 }
 

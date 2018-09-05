@@ -90,8 +90,8 @@ Game.prototype.reset = function () {
   this.background = new Background(this);
   this.uielements = new UIElements(this);
 
-  this.horse1 = new Horse(this, './img/p1.png', 0, 450);
-  this.horse2 = new Horse(this, './img/p2.png', 0, 380);
+  this.horse1 = new Horse(this, './img/p1.png', 0, 430);
+  this.horse2 = new Horse(this, './img/p2.png', 0, 480);
 
   this.framesCounter = 0;
   counter = 0;
