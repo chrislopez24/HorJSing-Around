@@ -7,7 +7,7 @@ function Background(game) {
   this.x = 0;
   this.y = 0;
 
-  this.dx = 400;
+  this.dx = 100;
 }
 Background.prototype.draw = function () {
   this.game.ctx.drawImage(this.img, this.x, this.y, this.game.canvas.width, this.game.canvas.height);
@@ -18,8 +18,8 @@ Background.prototype.draw = function () {
 Background.prototype.move = function () {
   var horsePos = this.game.canvas.width - 100;
   if ((this.game.horse1.x > horsePos) || (this.game.horse2.x > horsePos)) {
-    this.game.horse1.x = this.game.horse1.x - 50;
-    this.game.horse2.x = this.game.horse2.x - 50;
+    this.game.horse1.x = this.game.horse1.x - 100;
+    this.game.horse2.x = this.game.horse2.x - 100;
     this.x -= this.dx;
     counter++;
   }

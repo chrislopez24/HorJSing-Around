@@ -63,15 +63,14 @@ var PLAYER1_KEY = 90;
 var PLAYER2_KEY = 77;
 
 Game.prototype.setListeners = function () {
-  document.onkeydown = function (event) {
+  document.onkeyup = function (event) {
     if (event.keyCode === PLAYER1_KEY) {
       this.horse1.animateImg();
-      this.horse1.x += 18;
+      this.horse1.x += 30;
     }
     if (event.keyCode === PLAYER2_KEY) {
-
       this.horse2.animateImg();
-      this.horse2.x += 18;
+      this.horse2.x += 30;
     }
   }.bind(this)
 }
@@ -117,5 +116,4 @@ Game.prototype.drawVersion = function () {
   this.ctx.fillStyle = 'white';
   this.ctx.fillText(`version: ${this.version}`, this.canvas.width - 100,
     this.canvas.height - 25);
-  //this.ctx.fillText()
 };
