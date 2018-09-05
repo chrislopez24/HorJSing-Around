@@ -20,7 +20,7 @@ Game.prototype.start = function () {
       this.framesCounter = 0;
     }
     this.draw();
-    this.drawVersion();
+    //this.drawVersion();
     this.moveAll();
     this.checkWinner();
   }.bind(this), 1000 / this.fps);
@@ -59,8 +59,8 @@ Game.prototype.drawWinnerText = function () {
 
 }
 
-var PLAYER1_KEY = 90;
-var PLAYER2_KEY = 77;
+var PLAYER1_KEY = 90; // Z
+var PLAYER2_KEY = 77; // M
 
 Game.prototype.setListeners = function () {
   document.onkeyup = function (event) {
@@ -83,6 +83,8 @@ Game.prototype.reset = function () {
   this.horse2 = new Horse(this, './img/p2.png', 0, 380);
 
   this.framesCounter = 0;
+  this.counter = 0;
+  //this.uielements.amountProgressLoaded = 0
   this.winner = "";
 };
 
@@ -108,12 +110,11 @@ Game.prototype.draw = function () {
   this.background.draw();
   this.uielements.drawProgressBar();
   this.horse1.draw();
-  this.horse2.draw();
-  // this.drawScore();  
+  this.horse2.draw(); 
 };
-Game.prototype.drawVersion = function () {
-  this.ctx.font = '30px Caveat';
-  this.ctx.fillStyle = 'white';
-  this.ctx.fillText(`version: ${this.version}`, this.canvas.width - 100,
-    this.canvas.height - 25);
-};
+// Game.prototype.drawVersion = function () {
+//   this.ctx.font = '30px Caveat';
+//   this.ctx.fillStyle = 'white';
+//   this.ctx.fillText(`version: ${this.version}`, this.canvas.width - 100,
+//     this.canvas.height - 25);
+// };

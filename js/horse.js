@@ -11,7 +11,7 @@ function Horse(game, img, x, y) {
   this.img.src = img;
 
   // número de imágenes diferentes
-  this.img.frames = 7;
+  this.img.frames = 4;
   this.img.frameIndex = 0;
 
   // medidas de la imagen a representar en el canvas
