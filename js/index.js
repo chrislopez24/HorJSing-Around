@@ -2,7 +2,7 @@ window.onload = function() {
   var game = new Game("canvas");
   var startButton = document.getElementById("start-button");
   var resetButton = document.getElementById("reset-button");
-  var creditsButton = document.getElementById("credits-button")
+  var howToButton = document.getElementById("howto-button")
   var audioMenu = new Audio("./audios/music-menu.mp3")
   document.addEventListener("mousemove", function() {
     audioMenu.loop = true;
@@ -19,8 +19,8 @@ window.onload = function() {
   resetButton.addEventListener("click", function(){
     game.reset();
   })
-  creditsButton.addEventListener("click", function() {
-    game.credits()
+  howToButton.addEventListener("click", function() {
+    game.howTo();
   })
   
 };

@@ -110,14 +110,26 @@ Game.prototype.clear = function () {
 Game.prototype.moveAll = function () {
   this.background.move();
 };
-Game.prototype.credits = function () {
-  this.ctx.font = "45px Caveat";
+Game.prototype.howTo = function () {
+  this.ctx.font = '45px Caveat';
   this.ctx.fillStyle = '#ffff00';
-  this.ctx.fillText(`Game Made by:`, this.canvas.width / 2 - 250,
-    this.canvas.height / 2 + 150)
+  this.ctx.fillText('Game Made by:', this.canvas.width / 2 - 250,
+    this.canvas.height / 2 + 150);
   this.ctx.fillStyle = '#ffffff';//white
-  this.ctx.fillText(`Christian Lopez`, this.canvas.width / 2 - 0,
+  this.ctx.fillText('Christian Lopez', this.canvas.width / 2 - 0,
     this.canvas.height / 2 + 150)
+  this.ctx.fillText('How-To:', this.canvas.width / 2 - 50,
+    this.canvas.height / 2 + 200);
+    this.ctx.font = '25px Caveat';
+    this.ctx.fillText('Player1: ', this.canvas.width / 2 - 250,
+    this.canvas.height / 2 + 250)
+    this.ctx.fillText('Player2: ', this.canvas.width / 2 + 150,
+    this.canvas.height / 2 + 250);
+    this.ctx.fillStyle = '#ffff00'; //yellow
+    this.ctx.fillText(' "Z" to move / "A" to stop PowerBar', this.canvas.width / 2 - 360,
+    this.canvas.height / 2 + 280)
+    this.ctx.fillText(' "M" to move / "K" to stop PowerBar', this.canvas.width / 2 + 45,
+    this.canvas.height / 2 + 280)
 }
 
 Game.prototype.draw = function () {
