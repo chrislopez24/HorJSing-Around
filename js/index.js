@@ -14,7 +14,7 @@ window.onload = function() {
     startButton.innerText = "Game Ongoing";
     startButton.disabled = true;
     resetButton.disabled = false;
-    creditsButton.disabled = true;
+    howToButton.disabled = true;
   })
   resetButton.addEventListener("click", function(){
     game.reset();
