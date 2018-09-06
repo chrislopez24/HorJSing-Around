@@ -9,6 +9,7 @@ function Game(canvas) {
 }
 var counter = 0;
 Game.prototype.start = function () {
+  this.reset();
   this.interval = setInterval(function () {
     this.clear();
     this.framesCounter++;
@@ -44,6 +45,9 @@ Game.prototype.checkWinner = function () {
       this.ctx.fillText(`TIED!!`, this.canvas.width / 2 - 150,
         this.canvas.height / 2)
     }
+    document.getElementById("start-button").innerText = "Start New Game";
+    document.getElementById("start-button").disabled = false;
+    document.getElementById("reset-button").disabled = true;
   }
 };
 Game.prototype.drawWinnerText = function () {
@@ -103,10 +107,8 @@ Game.prototype.reset = function () {
   this.framesCounterBarRight = 0;
   counter = 0;
   this.winner = "";
-
-
-  
 };
+
 
 
 Game.prototype.clear = function () {
@@ -121,20 +123,20 @@ Game.prototype.howTo = function () {
   this.ctx.fillStyle = '#ffff00';
   this.ctx.fillText('Game Made by:', this.canvas.width / 2 - 250,
     this.canvas.height / 2 + 150);
-  this.ctx.fillStyle = '#ffffff';//white
+  this.ctx.fillStyle = '#ffffff'; //white
   this.ctx.fillText('Christian Lopez', this.canvas.width / 2 - 0,
     this.canvas.height / 2 + 150)
   this.ctx.fillText('How-To:', this.canvas.width / 2 - 50,
     this.canvas.height / 2 + 200);
-    this.ctx.font = '25px Caveat';
-    this.ctx.fillText('Player1: ', this.canvas.width / 2 - 250,
+  this.ctx.font = '25px Caveat';
+  this.ctx.fillText('Player1: ', this.canvas.width / 2 - 250,
     this.canvas.height / 2 + 250)
-    this.ctx.fillText('Player2: ', this.canvas.width / 2 + 150,
+  this.ctx.fillText('Player2: ', this.canvas.width / 2 + 150,
     this.canvas.height / 2 + 250);
-    this.ctx.fillStyle = '#ffff00'; //yellow
-    this.ctx.fillText(' "Z" to move / "A" to stop PowerBar', this.canvas.width / 2 - 360,
+  this.ctx.fillStyle = '#ffff00'; //yellow
+  this.ctx.fillText(' "Z" to move / "A" to stop PowerBar', this.canvas.width / 2 - 360,
     this.canvas.height / 2 + 280)
-    this.ctx.fillText(' "M" to move / "K" to stop PowerBar', this.canvas.width / 2 + 45,
+  this.ctx.fillText(' "M" to move / "K" to stop PowerBar', this.canvas.width / 2 + 45,
     this.canvas.height / 2 + 280)
 }
 
@@ -147,7 +149,7 @@ Game.prototype.draw = function () {
 };
 Game.prototype.drawVersion = function () {
   this.ctx.font = '30px Caveat';
-  this.ctx.fillStyle = '#ffffff';//white
+  this.ctx.fillStyle = '#ffffff'; //white
   this.ctx.fillText(`version: ${this.version}`, this.canvas.width - 100,
     this.canvas.height - 25);
 };
