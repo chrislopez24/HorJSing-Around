@@ -5,7 +5,7 @@ function UIElements(game) {
   this.y = 0;
   //Progress Bar vars
   this.diff; // diff for progress bar
-  this.start = 4.80; //starting point
+  this.start = 4.80; //starting point of the progressbar
   this.amountProgressLoaded = 0;
   //Power Bar vars
   this.game.framesCounterBarLeft;

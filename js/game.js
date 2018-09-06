@@ -15,13 +15,13 @@ Game.prototype.start = function () {
     this.framesCounter++;
     this.framesCounterBarLeft++;
     this.framesCounterBarRight++;
-    //limite de frameCounter
+    //limit framecounter
     if (this.framesCounter > 1000) {
       this.framesCounter = 0;
     }
     this.draw();
     this.drawVersion();
-    this.moveAll();
+    this.moveBackground();
     this.checkWinner();
   }.bind(this), 1000 / this.fps);
 };
@@ -56,7 +56,6 @@ Game.prototype.drawWinnerText = function () {
   this.ctx.fillStyle = '#add8e6';
   this.ctx.fillText(` ${this.winner} WON !!`, this.canvas.width / 2,
     this.canvas.height / 2 + 50)
-
 }
 
 var PLAYER1_KEY = 90; // Z
@@ -115,7 +114,7 @@ Game.prototype.clear = function () {
   this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 };
 
-Game.prototype.moveAll = function () {
+Game.prototype.moveBackground = function () {
   this.background.move();
 };
 Game.prototype.howTo = function () {
