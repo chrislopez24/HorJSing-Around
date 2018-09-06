@@ -1,4 +1,3 @@
-/*  */
 function Background(game) {
   this.game = game;
   this.img = new Image();
@@ -15,8 +14,8 @@ Background.prototype.draw = function () {
 };
 
 Background.prototype.move = function () {
-  var horsePos = this.game.canvas.width - 100;
-  if ((this.game.horse1.x > horsePos) || (this.game.horse2.x > horsePos)) {
+  var horsePosToMove = this.game.canvas.width - 100;
+  if ((this.game.horse1.x > horsePosToMove) || (this.game.horse2.x > horsePosToMove)) {
     this.game.horse1.x = this.game.horse1.x - 100;
     this.game.horse2.x = this.game.horse2.x - 100;
     this.x -= this.dx;

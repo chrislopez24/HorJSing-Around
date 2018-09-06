@@ -39,10 +39,10 @@ UIElements.prototype.drawProgressBar = function () {
   //checking winner to stop the progressbars
   this.game.checkWinner();
 }
-UIElements.prototype.drawPowerBar = function () {
+UIElements.prototype.drawPowerBars = function () {
 
-  this.drawPowerBar1();
-  this.drawPowerBar2();
+  this.drawPowerBarLeft();
+  this.drawPowerBarRight();
 
   if (this.game.framesCounterBarLeft  >= 200) {
     this.game.framesCounterBarLeft = 0;
@@ -50,7 +50,7 @@ UIElements.prototype.drawPowerBar = function () {
     this.game.framesCounterBarRight = 0;
   }
 }
-UIElements.prototype.drawPowerBar1 = function () {
+UIElements.prototype.drawPowerBarLeft = function () {
   this.game.ctx.beginPath();
   this.game.ctx.rect(188, 50, 200, 50);
   this.game.ctx.lineWidth = 4;
@@ -66,7 +66,7 @@ UIElements.prototype.drawPowerBar1 = function () {
   this.game.ctx.fillText('Player 1', 340, 140); 
   this.game.ctx.closePath();
 }
-UIElements.prototype.drawPowerBar2 = function() {
+UIElements.prototype.drawPowerBarRight = function() {
   this.game.ctx.beginPath();
   this.game.ctx.rect(790, 50, 200, 50);
   this.game.ctx.lineWidth = 4;

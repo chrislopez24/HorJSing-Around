@@ -7,6 +7,7 @@ function Game(canvas) {
   this.reset();
 
 }
+
 var counter = 0;
 Game.prototype.start = function () {
   this.reset();
@@ -20,7 +21,6 @@ Game.prototype.start = function () {
       this.framesCounter = 0;
     }
     this.draw();
-    this.drawVersion();
     this.moveBackground();
     this.checkWinner();
   }.bind(this), 1000 / this.fps);
@@ -29,6 +29,7 @@ Game.prototype.start = function () {
 Game.prototype.stop = function () {
   clearInterval(this.interval);
 };
+
 Game.prototype.checkWinner = function () {
   if (counter > 100) {
     this.stop();
@@ -50,6 +51,7 @@ Game.prototype.checkWinner = function () {
     document.getElementById("reset-button").disabled = true;
   }
 };
+
 Game.prototype.drawWinnerText = function () {
   document.getElementById("start-button").innerText = `${this.winner} WON!!`;
   this.ctx.font = "80px Caveat";
@@ -108,8 +110,6 @@ Game.prototype.reset = function () {
   this.winner = "";
 };
 
-
-
 Game.prototype.clear = function () {
   this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 };
@@ -117,6 +117,7 @@ Game.prototype.clear = function () {
 Game.prototype.moveBackground = function () {
   this.background.move();
 };
+
 Game.prototype.howTo = function () {
   this.ctx.font = '45px Caveat';
   this.ctx.fillStyle = '#ffff00';
@@ -141,11 +142,13 @@ Game.prototype.howTo = function () {
 
 Game.prototype.draw = function () {
   this.background.draw();
+  this.drawVersion();
   this.uielements.drawProgressBar();
-  this.uielements.drawPowerBar();
+  this.uielements.drawPowerBars();
   this.horse1.draw();
   this.horse2.draw();
 };
+
 Game.prototype.drawVersion = function () {
   this.ctx.font = '30px Caveat';
   this.ctx.fillStyle = '#ffffff'; //white
