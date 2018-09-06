@@ -20,15 +20,15 @@ UIElements.prototype.drawProgressBar = function () {
   this.game.ctx.fillText('GAME PROGRESS', this.x + 600, this.y + 150);
   this.game.ctx.beginPath();
   //Progress Bar
-  this.game.ctx.fillStyle = '#FFF'; // for color of circle
-  this.game.ctx.fill(); // fill function
-  this.game.ctx.strokeStyle = '#e7f2ba'; // for border color
-  this.game.ctx.stroke(); // Stroke function
-  this.game.ctx.fillStyle = '#ffffff'; // For text color
-  this.game.ctx.strokeStyle = '#90ee90'; //For Stroke Color
-  this.game.ctx.textAlign = 'center'; //you know already for aligning text in center;
-  this.game.ctx.lineWidth = 20; // for Stroke width
-  this.game.ctx.font = '25pt Caveat'; // for font specifying
+  this.game.ctx.fillStyle = '#FFF'; // circle color
+  this.game.ctx.fill(); 
+  this.game.ctx.strokeStyle = '#e7f2ba'; //border color
+  this.game.ctx.stroke();
+  this.game.ctx.fillStyle = '#ffffff'; //white
+  this.game.ctx.strokeStyle = '#90ee90'; //stroke color
+  this.game.ctx.textAlign = 'center'; 
+  this.game.ctx.lineWidth = 20; // stroke width
+  this.game.ctx.font = '25pt Caveat'; 
   this.game.ctx.closePath();
   this.game.ctx.beginPath(); // starting circle drawing function
   this.game.ctx.arc(this.x + 600, this.y + 70, 50, this.start, diff + this.start, false);
@@ -36,9 +36,8 @@ UIElements.prototype.drawProgressBar = function () {
   this.game.ctx.fillText(`${counter} %`, this.x + 600, this.y + 80);
   this.game.ctx.closePath();
   this.amountProgressLoaded++;
-  if (counter == 101) {
-    this.game.stop();
-  }
+  //checking winner to stop the progressbars
+  this.game.checkWinner();
 }
 UIElements.prototype.drawPowerBar = function () {
 

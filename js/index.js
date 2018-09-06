@@ -3,10 +3,11 @@ window.onload = function() {
   var startButton = document.getElementById("start-button");
   var resetButton = document.getElementById("reset-button");
   var howToButton = document.getElementById("howto-button")
-  var audioMenu = new Audio("./audios/music-menu.mp3")
+  var audioMenu = new Audio("./audios/music-menu.mp3");
+  //Trick to autoplay music onload due to Chrome limitations
   document.addEventListener("mousemove", function() {
     audioMenu.loop = true;
-    audioMenu.play();
+    audioMenu.play()
   });
 
   startButton.addEventListener("click", function() {
