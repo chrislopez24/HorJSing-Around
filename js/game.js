@@ -3,6 +3,7 @@ function Game(canvas) {
   this.ctx = this.canvas.getContext("2d");
   this.version = "0.1";
   this.fps = 60;
+  this.framesCounter = 0;
   this.reset();
 
 }
@@ -10,8 +11,13 @@ var counter = 0;
 Game.prototype.start = function () {
   this.interval = setInterval(function () {
     this.clear();
+    this.framesCounter++;
     this.framesCounterBarLeft++;
     this.framesCounterBarRight++;
+    //limite de frameCounter
+    if (this.framesCounter > 1000) {
+      this.framesCounter = 0;
+    }
     this.draw();
     this.drawVersion();
     this.moveAll();

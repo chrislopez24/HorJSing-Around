@@ -42,8 +42,10 @@ Horse.prototype.animateImg = function () {
   // se va cambiando el frame. Cuanto mayor es el módulo, mas lento se mueve el personaje
   if (this.game.framesCounter % 2 === 0) {
     this.img.frameIndex += 1;
+    console.log ('entra animimage');
 
     // Si el frame es el último, se vuelve al primero
-    if (this.img.frameIndex > 2) this.img.frameIndex = 0;
+    if (this.img.frameIndex > 3) this.img.frameIndex = 0;
   }
+  //console.log("entra reset");
 };
