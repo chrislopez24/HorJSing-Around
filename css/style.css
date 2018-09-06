@@ -1,14 +1,17 @@
 #start-button {
   width: 1200px;
 }
+
 #credits-button {
   margin: 3px;
   width: 1200px;
 }
+
 #reset-button {
   margin: 3px;
   width: 1200px;
 }
+
 /* #bg-image {
   width: 1200px;
   height: 600px;
@@ -20,6 +23,7 @@
   top: 5px;
   left: 5px;
 }
+
 #menu {
   position: absolute;
   width: 1200px;
@@ -29,24 +33,33 @@
   text-align: center;
   background-color: grey;
 }
+
 #menu {
   background-image: url('../img/bg.jpg');
 }
+
 h1 {
-  font-family: 'Caveat';font-size: 100px;
+  font-family: 'Caveat';
+  font-size: 100px;
   font-stretch: expanded;
   color: white;
 }
+
 span {
   color: yellow;
 }
+
 #main {
   height: 60%;
   overflow: auto;
   margin: auto;
   position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
+
 canvas {
   position: relative;
   top: 0;

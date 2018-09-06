@@ -23,6 +23,4 @@ window.onload = function() {
     game.credits()
   })
   
-  //game.start();
-  
 };
