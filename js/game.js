@@ -64,35 +64,42 @@ var PLAYER1_KEY = 90; // Z
 var PLAYER2_KEY = 77; // M
 var PLAYER1_KEY_POWER = 65; // A
 var PLAYER2_KEY_POWER = 75; // K
+//For testing purposes
+var PLAYER1_EXP_KEY = 81; //Q
+var PLAYER2_EXP_KEY = 79; //O
 
 Game.prototype.setListeners = function () {
   var powerModLeft, powerModRight;
   document.onkeyup = function (event) {
-    if (event.keyCode === PLAYER1_KEY) {
-      this.horse1.animateImg();
-      this.horse1.x += 30;
-      if (powerModLeft) {
-        this.horse1.x += powerModLeft;
-      }
-    }
-    if (event.keyCode === PLAYER2_KEY) {
-      this.horse2.animateImg();
-      this.horse2.x += 30;
-      if (powerModRight) {
-        this.horse2.x += powerModRight;
-      }
-    }
-    if (event.keyCode === PLAYER1_KEY_POWER) {
-      powerModLeft = Math.floor(this.framesCounterBarLeft * 0.10);
-      console.log(`A pressed : ${powerModLeft} value`)
-      this.uielements.resetPowerBarLeft();
-      return powerModLeft;
-    }
-    if (event.keyCode === PLAYER2_KEY_POWER) {
-      powerModRight = Math.floor(this.framesCounterBarRight * 0.10);
-      console.log(`K pressed : ${powerModRight} value`)
-      this.uielements.resetPowerBarRight();
-      return powerModRight;
+    switch (event.keyCode) {
+      case PLAYER1_KEY: //M
+        this.horse1.animateImg();
+        this.horse1.x += 30;
+        if (powerModLeft) this.horse1.x += powerModLeft;
+        break;
+      case PLAYER2_KEY: //M
+        this.horse2.animateImg();
+        this.horse2.x += 30;
+        if (powerModRight) this.horse2.x += powerModRight;
+        break;
+      case PLAYER1_KEY_POWER: //A
+        powerModLeft = Math.floor(this.framesCounterBarLeft * 0.10);
+        console.log(`A pressed : ${powerModLeft} value`)
+        this.uielements.resetPowerBarLeft();
+        return powerModLeft;
+      case PLAYER2_KEY_POWER: // K
+        powerModRight = Math.floor(this.framesCounterBarRight * 0.10);
+        console.log(`K pressed : ${powerModRight} value`)
+        this.uielements.resetPowerBarRight();
+        return powerModRight;
+      case PLAYER1_EXP_KEY: //Q
+        counter = 99;
+        this.horse1.x = this.canvas.width - 100;
+        break;
+      case PLAYER2_EXP_KEY: //O
+        counter = 99;
+        this.horse1.x = this.canvas.width - 100;
+        break;
     }
   }.bind(this)
 }
