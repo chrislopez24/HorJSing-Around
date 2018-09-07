@@ -1,15 +1,15 @@
 #start-button {
-  width: 1200px;
+  width: 1400px;
 }
 
 #howto-button {
   margin: 3px;
-  width: 1200px;
+  width: 1400px;
 }
 
 #reset-button {
   margin: 3px;
-  width: 1200px;
+  width: 1400px;
 }
 
 /* #bg-image {
@@ -17,7 +17,7 @@
   height: 600px;
 } */
 .container {
-  width: 1200px;
+  width: 1400px;
   height: 600px;
   position: absolute;
   top: 5px;
@@ -26,7 +26,7 @@
 
 #menu {
   position: absolute;
-  width: 1200px;
+  width: 1400px;
   height: 600px;
   border: 1px solid black;
   z-index: 2;
