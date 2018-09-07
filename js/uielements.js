@@ -17,7 +17,7 @@ UIElements.prototype.drawProgressBar = function () {
   //GAME PROGRESS TEXT
   this.game.ctx.font = '20px Caveat';
   this.game.ctx.fillStyle = '#ffffff';
-  this.game.ctx.fillText('GAME PROGRESS', this.x + 600, this.y + 150);
+  this.game.ctx.fillText('GAME PROGRESS', this.x + 700, this.y + 150);
   this.game.ctx.beginPath();
   //Progress Bar
   this.game.ctx.fillStyle = '#FFF'; // circle color
@@ -31,9 +31,9 @@ UIElements.prototype.drawProgressBar = function () {
   this.game.ctx.font = '25pt Caveat'; 
   this.game.ctx.closePath();
   this.game.ctx.beginPath(); // starting circle drawing function
-  this.game.ctx.arc(this.x + 600, this.y + 70, 50, this.start, diff + this.start, false);
+  this.game.ctx.arc(this.x + 700, this.y + 70, 50, this.start, diff + this.start, false);
   this.game.ctx.stroke();
-  this.game.ctx.fillText(`${counter} %`, this.x + 600, this.y + 80);
+  this.game.ctx.fillText(`${counter} %`, this.x + 700, this.y + 80);
   this.game.ctx.closePath();
   this.amountProgressLoaded++;
   //checking winner to stop the progressbars
@@ -68,18 +68,18 @@ UIElements.prototype.drawPowerBarLeft = function () {
 }
 UIElements.prototype.drawPowerBarRight = function() {
   this.game.ctx.beginPath();
-  this.game.ctx.rect(790, 50, 200, 50);
+  this.game.ctx.rect(990, 50, 200, 50);
   this.game.ctx.lineWidth = 4;
   this.game.ctx.strokeStyle = '#add8e6'; //lightblue
   this.game.ctx.stroke()
   this.game.ctx.closePath();
   this.game.ctx.beginPath();
   this.game.ctx.fillStyle = '#ffff00'; //yellow
-  this.game.ctx.fillText('POWER', 840, 140);
-  this.game.ctx.rect(792, 52, this.game.framesCounterBarRight, 45);
+  this.game.ctx.fillText('POWER', 1040, 140);
+  this.game.ctx.rect(992, 52, this.game.framesCounterBarRight, 45);
   this.game.ctx.fill();
   this.game.ctx.fillStyle = '#ffffff';//white
-  this.game.ctx.fillText('Player 2', 940, 140); 
+  this.game.ctx.fillText('Player 2', 1140, 140); 
   this.game.ctx.closePath();
 }
 UIElements.prototype.resetPowerBarLeft = function () {
