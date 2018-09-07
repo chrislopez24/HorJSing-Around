@@ -98,7 +98,7 @@ Game.prototype.setListeners = function () {
         break;
       case PLAYER2_EXP_KEY: //O
         counter = 99;
-        this.horse2.x = this.canvas.width - 100;
+        this.horse1.x = this.canvas.width - 100;
         break;
     }
   }.bind(this)
